@@ -4,7 +4,7 @@ description: Send us a message to find out more!
 map:
   latitude: -45.8787605
   longitude: 170.5027976
-  address: "1 George Street, Dunedin, New Zealand"
+  address: "192 W Liberty St, Plymouth, MI 48170"
   zoom: 13
 image: https://source.unsplash.com/WNAO036c6FM/2000x1322?a=.png
 ---
@@ -20,6 +20,20 @@ image: https://source.unsplash.com/WNAO036c6FM/2000x1322?a=.png
 
 <section class="pad">
 	<div class="text-container contact-box">
+		<div class="contact-details">
+			<h3>Address</h3>
+			<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+
+			<h3>Email</h3>
+			<p class="editable"><a href="mailto:support@example.com">support@FindersKeepers.com</a></p>
+
+			<h3>Hours</h3>
+			<p>Monday - Friday: 9am - 5pm</p>
+			<p>Saturday: 10am - 4pm</p>
+		</div>
+		<br>
+		<br>
+		<h1>Contact Us</h1>
 		<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
 			<input type="hidden" name="_to" value="support@cloudcannon.com">
 			<input type="text" name="_gotcha" style="display: none;">
@@ -36,16 +50,11 @@ image: https://source.unsplash.com/WNAO036c6FM/2000x1322?a=.png
 			<input type="submit" value="Send Message">
 		</form>
 
-		<div class="contact-details">
-			<h3>Address</h3>
-			<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
 
-			<h3>Email</h3>
-			<p class="editable"><a href="mailto:support@example.com">support@example.com</a></p>
-		</div>
 	</div>
 </section>
 
+<!--
 <div class="map" id="map"></div>
 
 <script>
@@ -78,3 +87,4 @@ image: https://source.unsplash.com/WNAO036c6FM/2000x1322?a=.png
 	}
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
+-->
